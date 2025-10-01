@@ -189,7 +189,7 @@ function Page() {
             </div>
           </div>
           <ShinyButton
-            href="/sing-up"
+            href="/sign-up"
             className="relative z-10 h-14 w-full max-w-xs text-base shadow-lg transition-shadow duration-300 hover:shadow-xl"
           >
             Start for free today
