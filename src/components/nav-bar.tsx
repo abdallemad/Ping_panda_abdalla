@@ -45,7 +45,7 @@ async function Navbar() {
                     Pricing
                   </Link>
                   <Link
-                    href={"/sign-up"}
+                    href={"/sign-in"}
                     className={buttonVariants({
                       size: "sm",
                       variant: "ghost",
