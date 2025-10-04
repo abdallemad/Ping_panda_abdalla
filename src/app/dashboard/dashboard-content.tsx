@@ -1,5 +1,6 @@
 "use client";
 
+import DashboardEmptyState from "@/components/dashboard/dashboard-empty-state";
 import LoadingSpinner from "@/components/laoding-spinnter";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { Modal } from "@/components/ui/modal";
@@ -25,7 +26,7 @@ function DashboardPageContent() {
         <LoadingSpinner />
       </div>
     );
-  // if (!categories || categories.length === 0) return <DashboardEmptyState />;
+  if (!categories || categories.length === 0) return <DashboardEmptyState />;
   return (
     <>
       <ul className="grid max-w-6xl grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
