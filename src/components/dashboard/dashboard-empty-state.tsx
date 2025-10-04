@@ -1,22 +1,11 @@
 "use client";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
-import React from "react";
-import { Card } from "../ui/card";
+import useInsertQuickCategories from "@/hooks/use-insert-quick-cateogries";
 import { Button } from "../ui/button";
+import { Card } from "../ui/card";
 import CreateEventCategoryModel from "./create-event-category-model";
-import { insertQuickEventCategoryAction } from "@/actions/insert-quick-event-category";
 
 function DashboardEmptyState() {
-  const queryClient = useQueryClient();
-
-  const { mutate: insertQuickStartCategory, isPending } = useMutation({
-    mutationFn: async () => await insertQuickEventCategoryAction(),
-    onSuccess() {
-      queryClient.invalidateQueries({
-        queryKey: ["user-event-categories"],
-      });
-    },
-  });
+  const { insertQuickStartCategory, isPending } = useInsertQuickCategories();
   return (
     <Card className="flex flex-col items-center justify-center rounded-2xl text-center flex-1 p-6">
       <div className="flex justify-center w-full">

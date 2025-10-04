@@ -5,7 +5,11 @@ import { Button } from "@/components/ui/button";
 import { PlusIcon } from "lucide-react";
 import { getAuth } from "@/actions/get-user";
 import CreateEventCategoryModel from "@/components/dashboard/create-event-category-model";
-
+import { Metadata } from "next";
+export const metadata:Metadata = {
+  title: "Dashboard",
+  description: "Dashboard page",
+}
 async function page() {
   await getAuth();
   return (
