@@ -13,3 +13,13 @@ export const EVENT_CATEGORY_VALIDATION = z.object({
 export type EVENT_CATEGORY_VALIDATION = z.infer<
   typeof EVENT_CATEGORY_VALIDATION
 >;
+
+export const REQUEST_VALIDATOR = z
+  .object({
+    name: CATEGORY_NAME_VALIDATOR,
+    fields: z
+      .record(z.string(), z.string().or(z.number()).or(z.boolean()))
+      .optional(),
+    description: z.string().optional(),
+  })
+  .strict();

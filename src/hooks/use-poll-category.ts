@@ -22,7 +22,7 @@ function usePollCategory(categoryName: string) {
       'Authorization': 'Bearer YOUR_API_KEY'
     },
     body: JSON.stringify({
-      category: '${categoryName}',
+      name: '${categoryName}',
       fields: {
         field1: 'value1', // for example: user id
         field2: 'value2' // for example: user email
