@@ -1,22 +1,21 @@
-import React, { useMemo, useState } from "react";
+import { Button } from "@/components/ui/button";
+import { $Enums } from "@/generated/prisma";
+import { JsonValue } from "@/generated/prisma/runtime/library";
+import { cn } from "@/lib/utils";
 import {
   ColumnDef,
   ColumnFiltersState,
-  flexRender,
   getCoreRowModel,
   getFilteredRowModel,
   getPaginationRowModel,
   getSortedRowModel,
   Row,
   SortingState,
-  useReactTable,
+  useReactTable
 } from "@tanstack/react-table";
-import { Button } from "@/components/ui/button";
 import { ArrowUpDown } from "lucide-react";
-import { cn } from "@/lib/utils";
-import { JsonValue } from "@/generated/prisma/runtime/library";
-import { $Enums } from "@/generated/prisma";
 import { useSearchParams } from "next/navigation";
+import { useMemo, useState } from "react";
 
 function useCreateTable({
   categoryName,
@@ -82,7 +81,7 @@ function useCreateTable({
             .map((field) => ({
               accessorFn: (row: Event) => {
                 const value = (
-                  // @ts-ignore
+                  // @ts-expect-error:some reason ts is not happy here
                   JSON.parse(row.fields as string) as Record<string, any>
                 )[field];
                 // Handle nested or JSON values
@@ -93,7 +92,7 @@ function useCreateTable({
               header: field, // Use the key as the header
               cell: ({ row }: { row: Row<Event> }) => {
                 const value = (
-                  // @ts-ignore
+                  // @ts-expect-error:some reason ts is not happy here
                   JSON.parse(row.original.fields as string) as Record<
                     string,
                     any
@@ -128,7 +127,7 @@ function useCreateTable({
 
   const table = useReactTable({
     data: data?.events || [],
-    // @ts-ignore
+    // @ts-expect-error: Typescript is being weird here
     columns,
     getCoreRowModel: getCoreRowModel(),
     onSortingChange: setSorting,

@@ -38,7 +38,7 @@ export const getEventCategoriesAction = async () => {
               const fieldsName = new Set<string>();
 
               events.forEach((event) => {
-                Object.keys(event.fields as Object).forEach((key) => {
+                Object.keys(event.fields as object).forEach((key) => {
                   fieldsName.add(key);
                 });
               });
@@ -67,6 +67,7 @@ export const getEventCategoriesAction = async () => {
 
     return categoriesWithCount;
   } catch (error) {
+    console.log(error);
     return null;
   }
 };

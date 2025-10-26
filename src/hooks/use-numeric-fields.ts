@@ -1,7 +1,7 @@
 import { $Enums } from "@/generated/prisma";
 import { JsonValue } from "@/generated/prisma/runtime/library";
 import { isAfter, isToday, startOfMonth, startOfWeek } from "date-fns";
-import React, { useMemo } from "react";
+import { useMemo } from "react";
 
 function useNumericFields({
   data,

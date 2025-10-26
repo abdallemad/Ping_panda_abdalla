@@ -1,6 +1,6 @@
 import { deleteEventCategoryAction, getEventCategoriesAction } from "@/actions/get-delete-events-category";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import React, { useState } from "react";
+import { useState } from "react";
 
 function useGetAndDeleteCategory() {
   const queryClient = useQueryClient();

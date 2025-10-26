@@ -1,10 +1,9 @@
 import { updateDiscordIdAction } from "@/actions/update-discord";
 import { useMutation } from "@tanstack/react-query";
-import React, { useState } from "react";
+import { useState } from "react";
 import { toast } from "sonner";
 
-
-function useUpdateDiscordId(initialDiscordId:string) {
+function useUpdateDiscordId(initialDiscordId: string) {
   const [discordId, setDiscordId] = useState(initialDiscordId);
 
   const { mutate: updateDiscordId, isPending } = useMutation({
@@ -13,17 +12,18 @@ function useUpdateDiscordId(initialDiscordId:string) {
     },
     onSuccess: ({ success }) => {
       if (success) {
-        toast( "Discord Id updated successfully");
+        toast("Discord Id updated successfully");
       } else {
-        toast( "Failed to update discord id");
+        toast("Failed to update discord id");
       }
     },
   });
   return {
     setDiscordId,
     updateDiscordId,
-    isPending
-  }
+    isPending,
+    discordId,
+  };
 }
 
 export default useUpdateDiscordId;

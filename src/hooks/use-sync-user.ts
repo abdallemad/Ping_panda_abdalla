@@ -2,7 +2,7 @@
 
 import { syncUserAction } from "@/actions/sync-user";
 import { useQuery } from "@tanstack/react-query";
-import { useSearchParams, useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect } from "react";
 
 

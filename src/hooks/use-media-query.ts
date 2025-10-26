@@ -39,5 +39,6 @@ export const useMediaQuery = () => {
     isMobile: device === "mobile",
     isTablet: device === "tablet",
     isDesktop: device === "desktop",
+    setDimensions,
   };
 };

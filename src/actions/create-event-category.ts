@@ -1,9 +1,9 @@
 "use server";
 
 import { EVENT_CATEGORY_VALIDATION } from "@/lib/category-validator";
-import { getAuth } from "./get-user";
 import db from "@/lib/db";
 import { parseColor } from "@/lib/utils";
+import { getAuth } from "./get-user";
 
 export const createEventCategoryAction = async (
   data: EVENT_CATEGORY_VALIDATION
