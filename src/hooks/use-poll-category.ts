@@ -16,7 +16,7 @@ function usePollCategory(categoryName: string) {
   useEffect(() => {
     if (hasEvents) router.refresh();
   }, [hasEvents, router]);
-  const codeSnip = `await fetch('https://localhost:3000/api/events', {
+  const codeSnip = `await fetch('https://ping-panda-abdalla.vercel.app/api/events', {
     method: 'POST',
     headers: {
       'Authorization': 'Bearer YOUR_API_KEY'
