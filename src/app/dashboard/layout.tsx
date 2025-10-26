@@ -9,7 +9,7 @@ import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import React, { useState } from "react";
 
-function layout({ children }: { children: React.ReactNode }) {
+function Layout({ children }: { children: React.ReactNode }) {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
   return (
@@ -119,4 +119,4 @@ const Sidebar = ({ onClose }: { onClose?: () => void }) => {
   );
 };
 
-export default layout;
+export default Layout;

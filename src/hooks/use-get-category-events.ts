@@ -50,6 +50,7 @@ function useGetCategoryEvents({
     pollingData,
     data,
     isFetching,
+    setPagination
   };
 }
 

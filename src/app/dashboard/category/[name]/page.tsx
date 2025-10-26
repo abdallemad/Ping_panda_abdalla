@@ -4,7 +4,6 @@ import db from "@/lib/db";
 import { notFound } from "next/navigation";
 import React from "react";
 import CategoryContent from "./category-content";
-import { Metadata } from "next";
 type Props = { params: Promise<{ name: string }> };
 
 export async function generateMetadata({ params }: Props) {
