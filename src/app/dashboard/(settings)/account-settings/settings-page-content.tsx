@@ -10,14 +10,14 @@ import React from "react";
 
 function SettingsPageContent({ discordId }: { discordId: string }) {
 
-  const {isPending,setDiscordId,updateDiscordId} = useUpdateDiscordId(discordId)
+  const {isPending,setDiscordId,updateDiscordId, _discordId} = useUpdateDiscordId(discordId)
 
   return (
     <Card className="max-w-xl w-full space-y-4">
       <div>
         <Label>Discord Id</Label>
         <Input
-          value={discordId}
+          value={_discordId}
           onChange={(e) => setDiscordId(e.target.value)}
           className="mt-1"
           placeholder="Enter your discord id"

@@ -4,7 +4,7 @@ import { useState } from "react";
 import { toast } from "sonner";
 
 function useUpdateDiscordId(initialDiscordId: string) {
-  const [discordId, setDiscordId] = useState(initialDiscordId);
+  const [_discordId, setDiscordId] = useState(initialDiscordId);
 
   const { mutate: updateDiscordId, isPending } = useMutation({
     mutationFn: async (discordId: string) => {
@@ -22,7 +22,7 @@ function useUpdateDiscordId(initialDiscordId: string) {
     setDiscordId,
     updateDiscordId,
     isPending,
-    discordId,
+    _discordId,
   };
 }
 
