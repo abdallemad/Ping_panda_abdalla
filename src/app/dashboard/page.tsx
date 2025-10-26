@@ -14,13 +14,11 @@ export const metadata: Metadata = {
   description: "Dashboard page",
 };
 interface DashboardProps {
-  searchParams: {
-    [key: string]: string | string[] | undefined;
-  };
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }
 async function page({ searchParams }: DashboardProps) {
   const user = await getAuth();
-  const intent = searchParams?.intent || "";
+  const intent = (await searchParams).intent || "";
   if (intent === "upgrade") {
     const session = await createCheckoutSession({
       userEmail: user.email,
@@ -28,7 +26,7 @@ async function page({ searchParams }: DashboardProps) {
     });
     return redirect(session.url!);
   }
-  const success = searchParams?.success || false;
+  const success = (await searchParams).success || false;
   return (
     <>
       {success && <PaymentSuccessModal />}
